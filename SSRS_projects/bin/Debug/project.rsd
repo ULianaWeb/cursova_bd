@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Project'[Project Name], 'Dim Project'[Manager], 'Dim Project'[Start Date], FILTER(VALUES('Dim Project'[Project Name]), ('Dim Project'[Project Name] = "Baredex")), "Hours Worked", [Hours Worked], "Total Payment", [Total Payment])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Project</DimensionName>
+                    <HierarchyName>Project Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Project].[Project Name]</HierarchyUniqueName>
+                    <LevelName>Project Name</LevelName>
+                    <UniqueName>[Dim Project].[Project Name].[Project Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Project Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Project</DimensionName>
+                    <HierarchyName>Manager</HierarchyName>
+                    <HierarchyUniqueName>[Dim Project].[Manager]</HierarchyUniqueName>
+                    <LevelName>Manager</LevelName>
+                    <UniqueName>[Dim Project].[Manager].[Manager]</UniqueName>
+                  </ID>
+                  <ItemCaption>Manager</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Project</DimensionName>
+                    <HierarchyName>Start Date</HierarchyName>
+                    <HierarchyUniqueName>[Dim Project].[Start Date]</HierarchyUniqueName>
+                    <LevelName>Start Date</LevelName>
+                    <UniqueName>[Dim Project].[Start Date].[Start Date]</UniqueName>
+                  </ID>
+                  <ItemCaption>Start Date</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Hours Worked</MeasureName>
+                    <UniqueName>[Measures].[Hours Worked]</UniqueName>
+                  </ID>
+                  <ItemCaption>Hours Worked</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Total Payment</MeasureName>
+                    <UniqueName>[Measures].[Total Payment]</UniqueName>
+                  </ID>
+                  <ItemCaption>Total Payment</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Projects DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Project].[Project Name]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Dim Project].[Project Name].&amp;[Baredex]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Project'[Project Name], 'Dim Project'[Manager], 'Dim Project'[Start Date], FILTER(VALUES('Dim Project'[Project Name]), ('Dim Project'[Project Name] = "Baredex")), "Hours Worked", [Hours Worked], "Total Payment", [Total Payment])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Project_Name">
+        <DataField>Dim Project[Project Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Manager">
+        <DataField>Dim Project[Manager]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Start_Date">
+        <DataField>Dim Project[Start Date]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Hours_Worked">
+        <DataField>[Hours Worked]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Total_Payment">
+        <DataField>[Total Payment]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

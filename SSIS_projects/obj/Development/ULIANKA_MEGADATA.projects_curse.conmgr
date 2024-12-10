@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ULIANKA_MEGADATA.projects_curse"
+  DTS:DTSID="{7FA59203-7F29-4B4B-82A8-6C106417B060}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=ULIANKA\MEGADATA;Initial Catalog=projects_curse;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SSIS_projects-{7FA59203-7F29-4B4B-82A8-6C106417B060}ULIANKA\MEGADATA.projects_curse;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
